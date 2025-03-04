@@ -7,17 +7,17 @@
     </div>
     <div class="row">
       <div class="col-md-12">
-        <form id="c_form-h" action="login" method="POST">
+        <form (ngSubmit)="authenticateUser()" [formGroup] = "loginData">
           <div class="form-group row">
             <label for="input login" class="col-2 col-form-label">Login</label>
             <div class="col-10">
-              <input type="text" class="form-control" id="input login" name="login" value="" placeholder="Login" required="required">
+              <input type="text" class="form-control" id="input login" name="login" value="" placeholder="Login" required="required" formControlName="login">
             </div>
           </div>
           <div class="form-group row">
             <label for="input password" class="col-2 col-form-label">Password</label>
             <div class="col-10">
-              <input type="password" class="form-control" id="input password" name="password" placeholder="Password" required="required">
+              <input type="password" class="form-control" id="input password" name="password" placeholder="Password" required="required" formControlName="password">
             </div>
             <button type="submit" class="btn btn-success">Submit</button>
           </div>
